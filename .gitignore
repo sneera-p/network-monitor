@@ -1,0 +1,42 @@
+# Ignore compiled files and build artifacts
+dist/
+build/
+bin/
+obj/
+gen/
+*.o
+*.so
+*.dll
+*.exe
+
+# Ignore dependency directories
+node_modules/
+vendor/
+venv/
+
+# Ignore log files
+*.log
+logs/
+
+# Ignore configuration files that might contain sensitive information
+*.env
+.env.*
+config.yaml.local
+config.json.local
+
+# Ignore database files (if not managed externally)
+*.sqlite
+*.db
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+*.iml
+
+# Ignore operating system specific files
+.DS_Store
+Thumbs.db
+
+# Ignore temporary files
+*~
+*.tmp
