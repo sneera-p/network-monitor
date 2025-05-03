@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "shared/devicedata.proto";
+import "shared/status.proto";
+
+option csharp_namespace = "App.Core.Protos";
+
+package core;
+
+// Represents a single network event or log entry.
+message ExtFwEvent {
+    // The timestamp when the event occurred.
+    google.protobuf.Timestamp timestamp = 1; // Renamed to snake_case
+
+    // Indicates if the device was available at the time of the event.
+    bool available = 2;
+
+    // The operational status of the device at the time of the event.
+    core.DeviceStatus status = 3;
+
+    // Device CPU usage metrics at the time of the event.
+    core.DeviceData cpu_usage = 4;
+
+    // Device memory usage metrics at the time of the event.
+    core.DeviceData memory_usage = 5;
+
+    // Incoming network traffic metrics at the time of the event.
+    core.DeviceData traffic_in = 6;
+
+    // Outgoing network traffic metrics at the time of the event.
+    core.DeviceData traffic_out = 7;
+}
+
+// Represents a network incident or problem detected.
+message ExtFwIncident {
+    // The timestamp when the incident was first detected.
+    google.protobuf.Timestamp timestamp = 1;
+
+    // The severity level of the incident.
+    core.IncidentSeverity severity = 2;
+
+    // The timestamp when the incident was resolved.
+    // Optional because an incident might be ongoing.
+    optional google.protobuf.Timestamp resolve_time = 3;
+
+    // A brief description of the incident.
+    string description = 4;
+
+    // Optional additional remarks or notes about the incident.
+    optional string remarks = 5;
+
+    // List of users or systems that were alerted about the incident.
+    repeated string alerted = 6;
+}

@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+option csharp_namespace = "App.Core.Protos";
+
+package core;
+
+// Defines standard units for network monitoring metrics.
+enum Unit {
+    // Default unspecified value.
+    NO_UNIT = 0;
+    // Hertz unit.
+    HERTZ = 1;
+    // Byte unit.
+    BYTE = 2;
+    // Bits per second unit.
+    BIT_PER_S = 3;
+}
+
+// Defines standard prefixes for network monitoring metric values (e.g., Kilo, Mega).
+enum Prefix {
+    // No prefix (value is as is).
+    NO_PREFIX = 0;
+    // Kilo (10^3) prefix.
+    K = 2;
+    // Mega (10^6) prefix.
+    M = 3;
+    // Giga (10^9) prefix.
+    G = 4;
+    // Tera (10^12) prefix.
+    T = 5;
+    // Peta (10^15) prefix.
+    P = 6;
+    // Add other required prefixes...
+}
+
+// Represents a data point with a value, unit, and prefix.
+message DeviceData {
+    // The numeric value of the metric.
+    int64 value = 1;
+    // The unit of the metric value.
+    core.Unit unit = 2;
+    // The prefix of the metric value.
+    core.Prefix prefix = 3;
+}

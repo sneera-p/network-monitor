@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option csharp_namespace = "App.Core.Protos";
+
+package core;
+
+// Defines the operational status of a network device.
+enum DeviceStatus {
+    // The device is online and operational.
+    ONLINE = 0;
+    // The device is offline or unreachable.
+    OFFLINE = 1;
+    // The device is currently under maintenance.
+    MAINTENANCE = 2; // Corrected typo: Maintenance
+}
+
+// Defines the severity level of a network incident.
+enum IncidentSeverity {
+    // Provides information, no immediate action required.
+    INFORMATION = 0;
+    // Minor issue, low impact.
+    LOW = 1;
+    // Moderate issue, requires attention.
+    AVERAGE = 2;
+    // Serious issue, requires immediate action.
+    HIGH = 3;
+    // Critical issue, major impact, requires urgent action.
+    CRITICAL = 4;
+}
