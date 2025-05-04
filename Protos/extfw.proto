@@ -51,5 +51,5 @@ message ExtFwIncident {
     string remarks = 5;
 
     // List of users or systems that were alerted about the incident.
-    string alerted = 6;
+    repeated string alerted = 6;
 }
