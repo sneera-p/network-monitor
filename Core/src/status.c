@@ -84,23 +84,23 @@ LIVE EXPORT char* incident_severity_as_string(int value)
 
 LIVE EXPORT int incident_severity_parse(char* value)
 {
-    if (strcmp(value, "Information"))
+    if (strcmp(value, "Information") == 0)
     {
         return CORE__INCIDENT_SEVERITY__INFORMATION;
     }
-    else if (strcmp(value, "Low"))
+    else if (strcmp(value, "Low") == 0)
     {
         return CORE__INCIDENT_SEVERITY__LOW;
     }
-    else if (strcmp(value, "Average"))
+    else if (strcmp(value, "Average") == 0)
     {
         return CORE__INCIDENT_SEVERITY__AVERAGE;
     }
-    else if (strcmp(value, "High"))
+    else if (strcmp(value, "High") == 0)
     {
         return CORE__INCIDENT_SEVERITY__HIGH;
     }
-    else if (strcmp(value, "Critical"))
+    else if (strcmp(value, "Critical") == 0)
     {
         return CORE__INCIDENT_SEVERITY__CRITICAL;
     }
