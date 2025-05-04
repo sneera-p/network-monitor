@@ -42,14 +42,14 @@ message ExtFwIncident {
 
     // The timestamp when the incident was resolved.
     // Optional because an incident might be ongoing.
-    optional google.protobuf.Timestamp resolve_time = 3;
+    google.protobuf.Timestamp resolve_time = 3;
 
     // A brief description of the incident.
     string description = 4;
 
     // Optional additional remarks or notes about the incident.
-    optional string remarks = 5;
+    string remarks = 5;
 
     // List of users or systems that were alerted about the incident.
-    repeated string alerted = 6;
+    string alerted = 6;
 }
