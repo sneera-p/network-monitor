@@ -15,7 +15,7 @@ LIVE EXPORT char* device_status_as_string(int value)
             status = "Offline";
             break;
         case CORE__DEVICE_STATUS__MAINTENANCE:
-            status = "Maintainance";
+            status = "Maintenance";
             break;
         default:
             status = "";
