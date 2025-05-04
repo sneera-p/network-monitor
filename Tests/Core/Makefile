@@ -8,5 +8,4 @@ BIN = bin
 test:
 	@cp -r $(LIB_SRC) $(BIN)
 	$(GCC) $(C_SRC) -L./$(BIN)/shared -lappcore -lprotobuf-c -o $(BIN)/test
-	@export LD_LIBRARY_PATH=./$(BIN)/shared
-	./$(BIN)/test
+	LD_LIBRARY_PATH=./$(BIN)/shared ./$(BIN)/test
